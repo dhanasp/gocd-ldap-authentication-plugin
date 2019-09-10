@@ -17,6 +17,7 @@
 package cd.go.apacheds.pool;
 
 
+import org.apache.commons.pool2.impl.BaseObjectPoolConfig;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 public class ConnectionPoolConfiguration {
@@ -40,7 +41,7 @@ public class ConnectionPoolConfiguration {
         poolConfig.setTestOnBorrow(false);
         poolConfig.setTestOnReturn(false);
         poolConfig.setTestWhileIdle(false);
-        poolConfig.setBlockWhenExhausted(poolConfig.getBlockWhenExhausted());
+        poolConfig.setBlockWhenExhausted(BaseObjectPoolConfig.DEFAULT_BLOCK_WHEN_EXHAUSTED);
     }
 
     public GenericObjectPoolConfig getPoolConfig() {
